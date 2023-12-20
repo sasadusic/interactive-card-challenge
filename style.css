@@ -1,0 +1,318 @@
+/* 1. Use a more-intuitive box-sizing model. */
+*/
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  /*
+  2. Remove default margin
+  */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Space Grotesk', sans-serif;
+    transition: .5s;
+  }
+  /*
+  Typographic tweaks!
+  3. Add accessible line-height
+    4. Improve text rendering
+    */
+  body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  /*
+  5. Improve media defaults
+  */
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  /*
+  6. Remove built-in form typography styles
+  */
+  input, button, textarea, select {
+    font: inherit;
+  }
+  /*
+    7. Avoid text overflows
+  */
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  /*
+  8. Create a root stacking context
+  */
+  #root, #__next {
+    isolation: isolate;
+  }
+:root{
+  /* Primary */
+  /* (active input border) */
+  --Linear-gradient: --Linear-gradient(hsl(249, 99%, 64%), hsl(278, 94%, 30%));
+  /* (input errors) */
+  --Red: hsl(0, 100%, 66%);
+  
+  /* Neutral */
+  --White: hsl(0, 0%, 100%);
+  --Light-grayish-violet: hsl(270, 3%, 87%);
+  --Dark-grayish-violet: hsl(279, 6%, 55%);
+  --Very-dark-violet: hsl(278, 68%, 11%);
+  --Very-dark-violet-2: hsl(278, 44%, 10%);
+}
+p{
+  font-size: 18px;
+  font-weight: 500;
+}
+.main{
+  min-height: 100vh;
+  background-image: url(images/bg-main-desktop.png);
+  background-repeat: no-repeat;
+}
+.grid{
+  position: relative;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  min-height: calc(100vh - 40px);
+  gap: min(100px, 10vw);
+}
+.left{
+  position: relative;
+  /* height: 100%; */
+  display: flex;
+  gap: 40px;
+  flex-direction: column;
+  align-items: end;
+  justify-content: center;
+}
+.right{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  width: 30vw;
+}
+.card-front, .card-back{
+  width: 447px;
+  height: 245px;
+  background-image: url(images/bg-card-front.png);
+  background-size: contain;
+}
+.card-front{
+  position: relative;
+  left: -5vw;
+  padding: 28px;
+  color: var(--White) !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.logo{
+  width: 84px;
+  height: 47px;
+}
+.number{
+  font-size: 28px;
+  letter-spacing: 4px;
+  line-height: 28px;
+  margin-bottom: 28px;
+}
+.card-flex{
+  display: flex;
+  justify-content: space-between;
+}
+.name{
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.card-back{
+  background-image: url(images/bg-card-back.png);
+  color: var(--White) !important;
+}
+.pin{
+  position: relative;
+  top: 45%;
+  left: 78%;
+  letter-spacing: 2px;
+}
+.form{
+  position: relative;
+  width: 100%;
+}
+.input-group{
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 18px;
+}
+.input{
+  padding: 8px;
+  border-radius: 4px;
+  border: none;
+  outline-color: var(--Very-dark-violet);
+  border: 1px solid var(--Light-grayish-violet);
+}
+.form-grid{
+  position: relative;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0 8px;
+  margin-bottom: 40px;
+}
+.input.small{
+  position: relative;
+  width: 100%;
+}
+#mm-label{
+  grid-column: span 2;
+}
+#one-label{
+  grid-column: span 2;
+}
+.item-3{
+  grid-column: span 2;
+}
+.label{
+  font-size: 18px;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.btn, .right-btn{
+  width: 100%;
+  font-size: 18px;
+  padding: 12px;
+  border: none;
+  outline-color: none;
+  background-color: var(--Very-dark-violet);
+  color: var(--White);
+  border-radius: 4px;
+}
+.attribution { 
+  background: var(--Very-dark-violet-2);
+  font-size: 16px; 
+  text-align: center; 
+  color: var(--White);
+  padding: 24px;
+}
+.attribution a { 
+  color: hsl(228, 45%, 44%);
+ }
+.right-img{
+  width: 80px;
+  height: 80px;
+  background-image: url(images/icon-complete.svg);
+  margin: 0 auto;
+}
+.right-h2{
+  position: relative;
+  width: 100%;
+  text-align: center;
+  margin-top: 32px;
+}
+.right-phar{
+  position: relative;
+  width: 100%;
+  text-align: center;
+  margin-top: 16px;
+}
+.right-btn{
+  margin-top: 18px;
+}
+/*
+/* Extra large devices (large desktops, 1200px and up) */
+@media (width < 1200px) {
+  .right{
+    width: 45vw;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (width < 992px) {
+  .main{
+    background-image: url(images/bg-main-mobile.png);
+  }
+  .grid{
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .left{
+    align-items: center;
+    justify-content: start;
+    padding-top: 40px;
+  }
+  .right{
+    width: 100vw;
+    padding: 24px;
+  }
+  .label{
+    font-size: 16px;
+  }
+  .card-back{
+    position: absolute;
+    top: 32px;
+    right: 24px;
+  }
+  .card-front{
+    z-index: 100;
+    left: -24px;
+    margin-top: 90px;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (width < 768px) {
+  .right{
+    margin-top: 28px;
+  }
+  .card-back, .card-front{
+    width: 280px;
+    height: 153px;
+    background-repeat: no-repeat;
+  }
+  .pin{
+    top: 45%;
+    left: 77%;
+    font-size: 10px;
+    letter-spacing: 2px;
+  }
+  .card-front{
+    padding: 18px;
+  }
+  .logo{
+    width: 50px;
+    height: 28px;
+  }
+  .number{
+    font-size: 16px;
+    letter-spacing: 3px;
+    line-height: 16px;
+    margin-bottom: 10px;
+  }
+  .card-flex{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .name{
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 10px;
+    line-height: 10px;
+  }
+  .pin{
+    font-size: 10px;
+    line-height: 10px;
+  }
+  .label{
+    font-size: 14px;
+    font-weight: 700;
+  }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (width < 576px) {}
